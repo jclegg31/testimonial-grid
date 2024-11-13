@@ -217,4 +217,19 @@ h2 {
       'patrick'
       'kira';
   }
+
+  .danimage,
+  .jonimage,
+  .jeanetteimage,
+  .patrickimage,
+  .kiraimage {
+    width: 9%;
+  }
+
+  .testimonial-grid-item.daniel .quote {
+    position: absolute;
+    top: 0;
+    right: 3rem;
+    z-index: 0;
+  }
 }
