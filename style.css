@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&display=swap');
+
+:root {
+  /* primary colors */
+
+  /* Note for text colors:
+1. "Verified Graduate" has the same color as the
+ person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+  --clr-mod-violet: #7541c8;
+  --clr-dark-gray-blue: #48556a;
+  --clr-dark-black-blue: #19212e;
+  --clr-white: #ffffff;
+  --clr-mod-violet-50: #a775f1;
+
+  /* Neutral */
+  --clr-light-gray: #cfcfcf;
+  --clr-light-grayish-blue: #ecf2f8;
+}
+
+/* CSS reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background-color: var(--clr-light-grayish-blue);
+  font-size: 13px;
+  min-height: 100vh;
+}
+
+img {
+  border-radius: 50%;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+}
+
+.testimonial-grid-container {
+  display: grid;
+  gap: 1.5rem;
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  place-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    'daniel daniel jonathan kira'
+    'jeanette patrick patrick kira';
+}
+
+.testimonial-grid-item {
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.testimonial-grid-container .daniel {
+  grid-area: daniel;
+}
+
+.testimonial-grid-container .jonathan {
+  grid-area: jonathan;
+}
+
+.testimonial-grid-container .kira {
+  grid-area: kira;
+}
+
+.testimonial-grid-container .jeanette {
+  grid-area: jeanette;
+}
+
+.testimonial-grid-container .patrick {
+  grid-area: patrick;
+}
+
+.testimonial-grid-item.daniel {
+  position: relative;
+}
+
+.testimonial-grid-item.daniel .quote {
+  position: absolute;
+  top: 0;
+  right: 10rem;
+  z-index: 0;
+}
+
+.testimonial-grid-item.daniel h2,
+.testimonial-grid-item.daniel p {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-grid-item.daniel .quote img {
+  width: 125%;
+}
+
+.daniel {
+  background-color: var(--clr-mod-violet);
+  color: var(--clr-white);
+}
+
+.daniel p,
+.jonathan p,
+.kira p,
+.jeanette p,
+.patrick p {
+  opacity: 50%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.daniel > p,
+.jonathan > p,
+.kira > p,
+.jeanette > p,
+.patrick > p {
+  padding-top: 20px;
+}
+
+.kira h2,
+.jeanette h2 {
+  color: var(--clr-dark-gray-blue);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.danimage {
+  width: 7%;
+  border: 3px solid var(--clr-mod-violet-50);
+}
+
+.jonimage {
+  width: 15%;
+  border: 3px solid var(--clr-light-gray);
+}
+
+.kiraimage {
+  width: 15%;
+  border: 3px solid var(--clr-mod-violet-50);
+}
+
+.jeanetteimage {
+  width: 15%;
+  border: 3px solid var(--clr-mod-violet-50);
+}
+
+.patrickimage {
+  width: 7%;
+  border: 3px solid var(--clr-mod-violet-50);
+}
+
+.name-title {
+  padding-left: 18px;
+  line-height: 1.25rem;
+}
+
+.name-title h3 {
+  font-weight: 500;
+}
+
+.name-title p {
+  opacity: 50%;
+  font-size: 0.8rem;
+}
+
+.quote {
+  position: relative;
+}
+
+.jonathan {
+  background-color: var(--clr-dark-gray-blue);
+  color: var(--clr-white);
+}
+
+.kira {
+  background-color: var(--clr-white);
+}
+
+.jeanette {
+  background-color: var(--clr-white);
+}
+
+.patrick {
+  background-color: var(--clr-dark-black-blue);
+  color: var(--clr-white);
+}
+
+.quote img {
+  border-radius: 0;
+}
+
+@media screen and (max-width: 375px) {
+  .testimonial-grid-container {
+    padding: 2rem;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'daniel'
+      'jonathan'
+      'jeanette'
+      'patrick'
+      'kira';
+  }
+}
